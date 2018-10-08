@@ -1,0 +1,10 @@
+.like {
+    margin-right: 10px;
+}
+.like:focus {
+    outline: none;
+}
+.like-count {
+    font-size: .825rem;
+    margin-left: 5px;
+}
