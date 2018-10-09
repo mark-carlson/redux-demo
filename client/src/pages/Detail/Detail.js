@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
@@ -12,9 +13,14 @@ class Detail extends Component {
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ book: res.data }))
+      .then(res => this.setState({book: res.data}))
       .catch(err => console.log(err));
   }
+
+  getLikes = () => {
+    const thisBook = this.props.books.filter(book => book._id === this.props.match.params.id)[0]
+    return (thisBook && thisBook.likes) ? thisBook.likes : 0;
+  };
 
   render() {
     return (
@@ -25,6 +31,7 @@ class Detail extends Component {
               <h1>
                 {this.state.book.title} by {this.state.book.author}
               </h1>
+              <h3>Likes: {this.getLikes()} </h3>
             </Jumbotron>
           </Col>
         </Row>
@@ -48,4 +55,9 @@ class Detail extends Component {
   }
 }
 
-export default Detail;
+const mapStateToProps = state => {
+  return {
+    books: state.books
+  }
+}
+export default connect(mapStateToProps)(Detail);
