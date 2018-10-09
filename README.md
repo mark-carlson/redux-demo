@@ -19,7 +19,7 @@ A browser will automatically open to [http://localhost:3000](http://localhost:30
 
 ## Authors
 
-* **Mark Carlson** - *Initial work* - [MarkCarlson.io](https://markcarlson.io)
+* **Mark Carlson** - [MarkCarlson.io](https://markcarlson.io)
 
 ## License
 
