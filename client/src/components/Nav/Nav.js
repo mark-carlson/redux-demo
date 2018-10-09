@@ -12,8 +12,8 @@ class Nav extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <div class="navbar-header">
+        <div className="container-fluid">
+          <div className="navbar-header">
             <a className="navbar-brand" href="/">
               React Reading List
             </a>
