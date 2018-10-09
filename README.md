@@ -15,6 +15,11 @@ npm install
 npm start
 ```
 
+* NOTE:  Make sure you have *Mongodb* running
+```
+mongod
+```
+
 A browser will automatically open to [http://localhost:3000](http://localhost:3000)
 
 ## Authors
