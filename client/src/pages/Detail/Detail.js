@@ -18,7 +18,7 @@ class Detail extends Component {
   }
 
   getLikes = () => {
-    const thisBook = this.props.books.filter(book => book._id === this.props.match.params.id)[0]
+    const thisBook = this.props.books.find(book => book._id === this.props.match.params.id)
     return (thisBook && thisBook.likes) ? thisBook.likes : 0;
   };
 

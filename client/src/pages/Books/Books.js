@@ -27,6 +27,12 @@ class Books extends Component {
     API.getBooks()
       .then(res => {
         const newBooks = res.data.map(book => {
+          /*
+          If the books are in the store, find the matching book and
+          attach the number of likes associated with it to the book
+          from the api.  Otherwise assign the book a likes property
+          of zero.
+          */
           if (this.props.books.length) {
             book.likes = (this.props.books.find(search => search._id === book._id)) ? this.props.books.find(search => search._id === book._id).likes : 0;
           } else {
@@ -34,7 +40,12 @@ class Books extends Component {
           }
           return book;
         });
-        this.props.loadBooks(newBooks)
+        this.props.loadBooks(newBooks); // [See Redux actionCreators] Dispatches an action to sends the new books to the redux store.
+        this.setState({
+          title: "",
+          author: "",
+          synopsis: ""
+        });
       })
       .catch(err => console.log(err));
   };

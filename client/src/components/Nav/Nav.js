@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
 class Nav extends Component {
@@ -14,11 +15,11 @@ class Nav extends Component {
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               React Reading List
-            </a>
+            </Link>
           </div>
-          <div className="nav navbar-nav navbar-right">Total Likes: {this.calcTotalLikes()}</div>
+          <div className="nav navbar-nav navbar-right text-white">Total Likes: {this.calcTotalLikes()}</div>
         </div>
       </nav>
     )}
