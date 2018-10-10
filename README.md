@@ -1,6 +1,6 @@
 # Redux Demo
 
-This is our final React project with internal component state removed and replaced with Redux.
+This is our final React activity with internal component state removed for books and replaced with Redux store data.  Adds like buttons for books that are saved in the redux store.  Total likes appear in the Nav bar and each book's likes tally is displayed in the "Detail" component jumbotron.
 
 ## Getting Started
 
