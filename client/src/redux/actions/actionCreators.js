@@ -7,7 +7,7 @@ export const increment = id => {
     }
 }
 
-export const loadBooks = (books) => {
+export const loadBooks = books => {
     return {
         type: 'LOAD_BOOKS',
         books
