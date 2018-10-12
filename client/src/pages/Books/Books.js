@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+
+// Redux dependencies
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from '../../redux/actions/actionCreators';
+
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
@@ -40,7 +43,7 @@ class Books extends Component {
           }
           return book;
         });
-        this.props.loadBooks(newBooks); // [See Redux actionCreators] Dispatches an action to sends the new books to the redux store.
+        this.props.loadBooks(newBooks); // [See Redux actionCreators] Dispatches an action to send the new books to the redux store.
         this.setState({
           title: "",
           author: "",
